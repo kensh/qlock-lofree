@@ -1,0 +1,14 @@
+load pid.maude .
+load label.maude .
+load queue.maude .
+load qlock.maude .
+load qlock-init.maude .
+
+*** model checking
+in model-checker.maude .
+load qlock-preds.maude .
+load qlock-check.maude .
+
+red in QLOCK-CHECK : modelCheck(init,mutex) .
+red in QLOCK-CHECK : modelCheck(init,lofree) .
+

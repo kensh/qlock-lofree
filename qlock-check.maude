@@ -1,0 +1,8 @@
+mod QLOCK-CHECK is 
+ inc QLOCK-PREDS .
+ inc MODEL-CHECKER .
+ inc LTL-SIMPLIFIER .
+ ops mutex lofree : -> Formula .
+ eq mutex = ([] ~(crit(p1) /\ crit(p2))) .
+ eq lofree = (wait(p1) |-> crit(p1)) /\ (wait(p2) |-> crit(p2)) .
+endm
